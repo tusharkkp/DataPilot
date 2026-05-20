@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 # ─── Gemini API Configuration ───────────────────────────────────────────────
-GEMINI_API_KEY = "AIzaSyA6mMM6vWimpykdj995vblNeoYN0ti6qc"
+GEMINI_API_KEY = " "
 
 def call_gemini(prompt, model="gemini-1.5-flash-latest"):
     """Calls the Gemini API to generate content based on the prompt."""
