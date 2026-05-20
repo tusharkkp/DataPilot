@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LLM-Based Data Analyst Assistant Design System */
+
+@layer base {
+  :root {
+    /* Brand Color Palette */
+    --polaris-purple: 258 71% 63%; /* #9156F1 */
+    --nebula-neutral: 40 11% 93%; /* #ECE9E7 */
+    --blackhole-burgundy: 245 42% 21%; /* #201E4B */
+    --galactic-green: 84 52% 75%; /* #C6E7A3 */
+    --lightyear-lavender: 289 44% 73%; /* #D4A3E2 */
+    
+    /* Tiles hover effect */
+    --tile: hsla(var(--polaris-purple), 0.1);
+    
+    /* Semantic tokens */
+    --background: var(--nebula-neutral);
+    --foreground: var(--blackhole-burgundy);
+    --primary: var(--polaris-purple);
+    --primary-foreground: var(--nebula-neutral);
+    --secondary: var(--lightyear-lavender);
+    --secondary-foreground: var(--blackhole-burgundy);
+    --accent: var(--galactic-green);
+    --accent-foreground: var(--blackhole-burgundy);
+    --muted: var(--nebula-neutral);
+    --muted-foreground: var(--blackhole-burgundy);
+    --card: var(--nebula-neutral);
+    --card-foreground: var(--blackhole-burgundy);
+    --border: var(--lightyear-lavender);
+    --input: var(--nebula-neutral);
+    --ring: var(--polaris-purple);
+    --radius: 0.75rem;
+
+    /* Glass morphism variables */
+    --glass-bg: hsla(var(--polaris-purple), 0.1);
+    --glass-border: hsla(var(--polaris-purple), 0.2);
+  }
+
+  .dark {
+    --background: var(--blackhole-burgundy);
+    --foreground: var(--nebula-neutral);
+    --card: var(--blackhole-burgundy);
+    --card-foreground: var(--nebula-neutral);
+    --tile: hsla(var(--galactic-green), 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-foreground;
+  }
+}
+
+@layer components {
+  /* Glass morphism utilities */
+  .glass-morphic {
+    @apply backdrop-blur-md bg-opacity-10 border border-opacity-20;
+    background: hsla(var(--polaris-purple), 0.1);
+    border-color: hsla(var(--polaris-purple), 0.2);
+  }
+
+  /* Premium button variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+  }
+
+  /* Card variants */
+  .card-green {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .card-lavender {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .card-purple {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Glow effects */
+  .glow-green {
+    @apply hover:shadow-lg;
+    box-shadow: 0 0 20px hsla(var(--galactic-green), 0.3);
+  }
+
+  .glow-purple {
+    @apply hover:shadow-lg;
+    box-shadow: 0 0 20px hsla(var(--polaris-purple), 0.3);
+  }
+
+  /* Live indicator */
+  .live-indicator {
+    @apply w-3 h-3 rounded-full animate-pulse;
+    background: hsl(var(--galactic-green));
+    box-shadow: 0 0 10px hsl(var(--galactic-green));
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--polaris-purple)), hsl(var(--galactic-green)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
